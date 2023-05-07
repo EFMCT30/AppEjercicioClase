@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Suma</title>
+<link th:href="@{/css/bootstrap/bootstrap.min.css}" rel="stylesheet">
+<script th:href="@{/js/bootstrap/bootstrap.bundle.js}"
+	type="text/javascript"></script>
+</head>
+<body>
+	<div class="card">
+		<div class="card-header">Sumatoria</div>
+		<div class="card-body">
+			<form th:action="@{/suma}" method="post" th:object="${Formsuma}">
+				<div class="mb-3">
+					<label for="txtNumero1" class="form-label">Numero1</label> <input
+						type="text" class="form-control" id="txtNumero1"
+						th:field="*{numero1}">
+				</div>
+				<div class="mb-3">
+					<label for="txtNumero2" class="form-label">txtNumero2</label> <input
+						type="text" class="form-control" id="txtNumero2"
+						th:field="*{txtNumero2}">
+				</div>
+				<button type="submit" class="btn btn-primary">Calcular</button>
+				<div th:if="${visualizar}" class="alert alert-primary" role="alert">
+					<span th:text="${mensaje}"></span>
+				</div>
+			</form>
+
+		</div>
+		<!-- card-body-->
+	</div>
+	<!-- card-->
+</body>
+</html>
